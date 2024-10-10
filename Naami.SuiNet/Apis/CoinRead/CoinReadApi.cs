@@ -45,7 +45,7 @@ public class CoinReadApi : ICoinReadApi
 
     public Task<CoinPage> GetCoins(SuiAddress owner, SuiObjectType coinType)
     {
-        const string method = "sui_getCoins";
+        const string method = "suix_getCoins";
         return _jsonRpcClient.SendAsync<CoinPage, GetCoinsRequest>(method, new GetCoinsRequest(owner, coinType));
     }
 
