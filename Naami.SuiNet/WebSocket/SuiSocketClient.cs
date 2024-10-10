@@ -48,7 +48,7 @@ public class SuiSocketClient : IDisposable, ISuiSocketClient
     {
         _logger.LogInformation("Reconnected - subscribing to node");
         
-        var req = new Request("sui_subscribeTransaction", Guid.NewGuid().ToString());
+        var req = new Request("suix_subscribeTransaction", Guid.NewGuid().ToString());
         req.Params = new[] { "Any" };
 
         _websocketClient.Send(req.ToJson());

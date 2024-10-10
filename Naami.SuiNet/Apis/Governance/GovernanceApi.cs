@@ -44,7 +44,7 @@ public class GovernanceApi : IGovernanceApi
         using var jsScope = JsConfig.BeginScope();
         jsScope.TextCase = TextCase.SnakeCase;
 
-        const string method = "sui_getCommitteeInfo";
+        const string method = "suix_getCommitteeInfo";
         return _jsonRpcClient.SendAsync<CommitteeInfoResponse, GetCommitteeInfoRequest>(
             method,
             new GetCommitteeInfoRequest { Epoch = epoch}

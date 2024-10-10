@@ -41,7 +41,7 @@ public class EventSocketApi : IEventSocketApi
         scope.IncludeTypeInfo = false;
         scope.ExcludeTypeInfo = true;
         scope.TextCase = TextCase.CamelCase;
-        var req = new Request<SubscribeRequest>("sui_subscribeEvent", Guid.NewGuid().ToString())
+        var req = new Request<SubscribeRequest>("suix_subscribeEvent", Guid.NewGuid().ToString())
         {
             Params = new SubscribeRequest(filter)
         };

@@ -106,7 +106,7 @@ public class ReadApi : IReadApi
 
     public Task<DynamicFieldPage> GetDynamicFields(ObjectId parentObjectId, ObjectId? cursor = null, uint? limit = null)
     {
-        const string method = "sui_getDynamicFields";
+        const string method = "suix_getDynamicFields";
 
         return _jsonRpcClient.SendAsync<DynamicFieldPage, GetDynamicFieldsRequest>(method,
             new GetDynamicFieldsRequest(parentObjectId)
@@ -118,7 +118,7 @@ public class ReadApi : IReadApi
 
     public Task<SuiObjectReadResult<SuiParsedData<T>>> GetDynamicFieldObject<T>(ObjectId parentObjectId, byte[] field)
     {
-        const string method = "sui_getDynamicFieldObject";
+        const string method = "suix_getDynamicFieldObject";
 
         var stringValues = field.Select(x => $"{x}u8");
         var v = $"vector[{string.Join(", ", stringValues)}]";
